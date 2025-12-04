@@ -17,10 +17,7 @@ async function getCurrencies(request, response) {
 
     const currencyData = await getCurrencyData();
     // console.log(Object.keys(currencyData.rates));
-
-    const payload = Object.keys(currencyData.rates);
-
-
+    
     // if error
     if(currencyData === -1){
         response.status(500).json({
@@ -28,6 +25,7 @@ async function getCurrencies(request, response) {
         })
     }
     else {
+        const payload = Object.keys(currencyData.rates);
         response.status(200).json(payload);
     }
     
