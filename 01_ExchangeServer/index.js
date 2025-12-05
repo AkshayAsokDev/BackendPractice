@@ -8,7 +8,7 @@ const ExchangeRoute = require("./Routes/ExchangeRoute");
 
 // create 1 route leader
 // exchange - to handle the functionality
-server.use("/exchange", ExchangeRoute);
+server.use("/api/v1/exchange", ExchangeRoute);
 
 
 server.listen(PORT, () => {
