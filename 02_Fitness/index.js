@@ -1,8 +1,13 @@
 // Fitness server
+// environment variables loading using dotenv -> into the process
+
+
 
 const express = require("express");
 const server = express();
-const PORT = 8089;
+require("dotenv").config();
+
+const PORT = process.env.PORT;
 const HomeRoute = require("./Routes/HomeRoute");
 const ActivityRoute = require("./Routes/ActivityRoute");
 

@@ -83,7 +83,7 @@ const users = [
 
 
 
-function getAllUsers(req, res) {
+function getAllUsers(req,res) {
     const payload = {
         "data" : users,
         "size" : users.length

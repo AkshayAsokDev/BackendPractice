@@ -14,3 +14,5 @@ Fitness Server - Practice of basics, Controllers, Routes. Support the functional
     2. get users
     3. get users by gender (using query)
     4. get users by firstName (using params)
+Sensitive data such as port, password - moved to .env file and is loaded into process using dotenv module
+Added authentication check for get functionality using middleware approach
