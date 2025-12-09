@@ -18,3 +18,4 @@ Sensitive data such as port, password - moved to .env file and is loaded into pr
 Added authentication check for get functionality using middleware approach
 
 MongoDB - server, collection creation, queries for CRUD operation learning and practice
+Connection to MongoDB using Mongoose module
