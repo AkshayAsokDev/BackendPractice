@@ -16,3 +16,5 @@ Fitness Server - Practice of basics, Controllers, Routes. Support the functional
     4. get users by firstName (using params)
 Sensitive data such as port, password - moved to .env file and is loaded into process using dotenv module
 Added authentication check for get functionality using middleware approach
+
+MongoDB - server, collection creation, queries for CRUD operation learning and practice
