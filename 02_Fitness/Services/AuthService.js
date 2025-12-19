@@ -33,8 +33,25 @@ class AuthService {
         return hashedPassword;
     }
 
-    static loginUser(credentials) {
+    static async loginUser(credentials) {
         // Login logic
+        const {email, password} = credentials;
+        
+        try {
+            // find the user with corresponding credentials
+            const savedUser = await UserModel.findOne({
+                email,
+                password: await AuthService.hashPassword(password)
+            })
+            // return the user details if found
+            return savedUser
+        } // else return error
+        catch(error){
+            return error
+        }
+        
+ 
+        
     }
 }
 
