@@ -6,11 +6,13 @@
 const express = require("express");
 const server = express();
 require("dotenv").config();
+server.use(express.json());
 
 
 const PORT = process.env.PORT;
 const HomeRoute = require("./Routes/HomeRoute");
 const ActivityRoute = require("./Routes/ActivityRoute");
+const BlogRoute = require("./Routes/BlogRoute");
 const { default: mongoose } = require("mongoose");
 
 
@@ -18,8 +20,10 @@ const { default: mongoose } = require("mongoose");
 // Home route leader
 server.use("/", HomeRoute);
 
+
 // Api functionalities
 server.use("/api/v1", ActivityRoute);
+server.use("/api/v1/blogs", BlogRoute);
 
 const MONGODB_URL = process.env.MONGODB_URL;
 const DBNAME = process.env.DBNAME;
