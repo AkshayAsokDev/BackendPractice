@@ -14,7 +14,23 @@ async function register(req, res) {
     }
 }
 
-function login(req, res) {}
+async function login(req, res) {
+    const {email ,password} = req.body;
+
+    try {
+        const savedUser = await AuthService.loginUser({
+            email,
+            password
+        })
+        res.status(200).json({
+            message: "User logged in successfully",
+            user: savedUser
+        })
+    }
+    catch {
+        res.status(500).json({ error: error.message });
+    }
+}
 
 module.exports = {
     register,
